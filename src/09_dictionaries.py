@@ -49,5 +49,5 @@ waypoints.append({"lat": 45, "lon": -130,"name": "new place"})
 
 # Write a loop that prints out all the field values for all the waypoints
 # YOUR CODE HERE
-for i, v in enumerate(waypoints):
+for i, v in waypoints:
     print(i, v)

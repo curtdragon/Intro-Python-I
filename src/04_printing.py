@@ -17,4 +17,6 @@ z = "I like turtles!"
 
 
 # Finally, print the same thing using an f-string
-print(f'x is {x}, y is {y}, z is "{z}"')
+#print(f'x is {x}, y is {y}, z is {z}')
+import os
+print(f'Hello, {os.getlogin()}! How are you?')
