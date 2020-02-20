@@ -30,23 +30,34 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+import math
 
-def printcal(y, m):
+def printcal(x):  
+  try:
+    int(x[1])
+  except:
+    sys.exit("Error: Enter input in form of: 14_cal.py [month mm] [year yyyy]")
+  
+  if int(x[1]) < 1 or int(x[1]) > 12:
+    sys.exit("Error: Enter a valid month")
+  
   currentdatetime = datetime.now()
-  currentmonth = currentdatetime.strftime("%m")
-  currentyear = currentdatetime.strftime("%Y")
-  if y == "":
-    y = int(currentyear)
-  if m =="":
-    m = int(currentmonth)
+  currentmonth = int(currentdatetime.strftime("%m"))
+  currentyear = int(currentdatetime.strftime("%Y"))
+  
+  if len(x) == 1 :
+  #No input  
+    m = currentmonth
+    y = currentyear
+  elif isinstance(x[1], str) == True:
+    m = int(x[1]) 
+    if len(x) == 3:
+    #Two inputs  
+      y = int(x[2])
+    else:
+    #1 input  
+      y = currentyear
+  print(calendar.month(y, m))    
 
-
-  # print("Error: Enter input in form of: 14_cal.py [month mm] [year yyyy]")
-  print(calendar.month(y , m))
-
-mm = ""
-yy = ""
-# x = input("Enter comma-separated numbers: ").split(',')
-printcal(yy, mm);
-print(sys.executable)
-
+x = sys.argv
+printcal(x)
