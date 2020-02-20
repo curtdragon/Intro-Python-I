@@ -41,7 +41,7 @@ def printcal(y, m):
     m = int(currentmonth)
 
 
-  print("Enter input in form of: 14_cal.py [month mm] [year yyyy]")
+  # print("Error: Enter input in form of: 14_cal.py [month mm] [year yyyy]")
   print(calendar.month(y , m))
 
 mm = ""
