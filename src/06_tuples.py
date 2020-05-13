@@ -45,5 +45,6 @@ t = (1, 2, 5, 7, 99)
 print_tuple(t)  # Prints 1 2 5 7 99, one per line
 
 # Declare a tuple of 1 element then print it
-u = (1)  # What needs to be added to make this work?
+u = (1,)  # What needs to be added to make this work?
+# Also can put an if statement on line 39 to print out the item if it is an int. u =(1) is seen as an int
 print_tuple(u)
